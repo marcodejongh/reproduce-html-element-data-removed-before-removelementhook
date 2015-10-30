@@ -738,7 +738,7 @@
     GridStack.prototype.remove_widget = function(el, detach_node) {
         detach_node = typeof detach_node === 'undefined' ? true : detach_node;
         el = $(el);
-        var node = el.data('_gridstack_node');
+        var node = el.data('_gridstack_node'); //<-- _gridstack_node data is needed here but has already been removed by Blaze.
         this.grid.remove_node(node);
         el.removeData('_gridstack_node');
         this._update_container_height();

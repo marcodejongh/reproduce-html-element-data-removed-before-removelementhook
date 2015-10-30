@@ -3,19 +3,20 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>html-element-data-removed-before-removelementhook</h1>
 
-
-
-  Bug reproduction step plan:
-
-  <ul>
-      <li>1. Click the "Add blocks" button</li>
-      <li>2. A block should have appeared, now click the block to remove it.</li>
-      <li>3. </li>
-  </ul>
-
-
+  Blaze removes html element data before the removeElement uiHook is called.<br/>
+  This makes it impossible to use jQuery plugins that store a lot of stuff in the data of DOM Elements.<br/>
+  Not sure if Blaze removing the data before the removeElement uiHook is inteneded behaviour I would assume it is not!<br/>
+  <br/>
+  Bug reproduction step plan:<br/>
+  <br/>
+  <ol>
+      <li>Click the "Add blocks" button</li>
+      <li>A block should have appeared</li>
+      <li>Click the block to remove it.</li>
+      <li>Check the console logs and errors.</li>
+  </ol>
 
   {{> hello}}
 </body>
