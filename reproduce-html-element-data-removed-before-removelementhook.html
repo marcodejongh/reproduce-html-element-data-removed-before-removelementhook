@@ -1,0 +1,60 @@
+<head>
+  <title>reproduce-html-element-data-removed-before-removelementhook</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+
+
+  Bug reproduction step plan:
+
+  <ul>
+      <li>1. Click the "Add blocks" button</li>
+      <li>2. A block should have appeared, now click the block to remove it.</li>
+      <li>3. </li>
+  </ul>
+
+
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Add blocks</button>
+
+    {{> grid}}
+
+
+</template>
+
+
+<template name="grid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="grid-stack grid-stack-12">
+                    {{#each getWidgets}}
+                        {{> grid_widget}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="grid_widget">
+    <div id="widget_{{_id}}" class="widget grid-stack-item" data-widgetid="{{_id}}"
+         data-gs-x="{{x}}" data-gs-y="{{y}}"
+         data-gs-width="{{width}}" data-gs-height="{{height}}">
+        <div class="widget-content grid-stack-item-content">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {{text}}
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+</template>
+

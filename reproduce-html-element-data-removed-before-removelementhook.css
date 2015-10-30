@@ -1,0 +1,23 @@
+/* CSS declarations go here */
+#grid1 {
+    background: lightgoldenrodyellow;
+}
+
+#grid2 {
+    background: lightcyan;
+}
+
+.grid-stack-item .panel-heading { min-height: 44px; overflow:hidden }
+.grid-stack-item .panel-body{
+    height: calc(100% - 44px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.grid-stack-item .panel {   height:100%; }
+.grid-stack-item .panel-heading {
+    cursor:move;
+}
+
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+    overflow-y:hidden;
+}
